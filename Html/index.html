@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>ModelViwer-Usdz</title>
+		<title>three.js webgl - USDZ exporter</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="../three/examples/main.css">
+		<link type="text/css" rel="stylesheet" href="main.css">
 		<style>
 			body {
 				background-color: #eee;
@@ -26,11 +26,12 @@
 
 	<body>
 		<div id="info">
+			<a href="https://threejs.org" target="_blank" rel="noopener"></a><br/>
 			
-			
+			<a href="https://sketchfab.com/theblueturtle_" target="_blank" rel="noopener"></a>
 		</div>
 
-		<a id="link" rel="ar" href="" download="model.usdz">
+		<a id="link" rel="ar" href="" download="asset.usdz">
 			<img id="button" width="100" src="../three/examples/files/arkit.png">
 		</a>
 
@@ -67,11 +68,11 @@
 				scene.background = new THREE.Color( 0xf0f0f0 );
 				scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
-				const loader = new GLTFLoader().setPath( '../Model/' );
-				loader.load( 'spectarwatch.glb', async function ( gltf ) {
+				const loader = new GLTFLoader().setPath( '../three/examples/models/gltf/MaterialsVariantsShoe/glTF/' );
+				loader.load( 'MaterialsVariantsShoe.gltf', async function ( gltf ) {
 
 					scene.add( gltf.scene );
-					
+
 					const shadowMesh = createSpotShadowMesh();
 					shadowMesh.position.y = - 1.1;
 					shadowMesh.position.z = - 0.25;

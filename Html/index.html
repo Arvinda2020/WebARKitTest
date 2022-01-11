@@ -30,7 +30,7 @@
 			
 		</div>
 
-		<a id="link" rel="ar" href="" >
+		<a id="link" rel="ar" href="" download="">
 			<img id="button" width="100" src="../three/examples/files/arkit.png">
 		</a>
 
@@ -67,7 +67,7 @@
 				scene.background = new THREE.Color( 0xf0f0f0 );
 				scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
-				const loader = new GLTFLoader().setPath( '../Assets/Model/' );
+				const loader = new GLTFLoader().setPath( '../Model/' );
 				loader.load( 'spectarwatch.glb', async function ( gltf ) {
 
 					scene.add( gltf.scene );

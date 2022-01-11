@@ -82,12 +82,12 @@
 
 					// USDZ
 
-					//const exporter = new USDZExporter();
-					//const arraybuffer = await exporter.parse( gltf.scene );
-					//const blob = new Blob( [ arraybuffer ], { type: 'application/octet-stream' } );
+					const exporter = new USDZExporter();
+					const arraybuffer = await exporter.parse( gltf.scene );
+					const blob = new Blob( [ arraybuffer ], { type: 'application/octet-stream' } );
 
-					//const link = document.getElementById( 'link' );
-					//link.href = URL.createObjectURL( blob );
+					const link = document.getElementById( 'link' );
+					link.href = URL.createObjectURL( blob );
 
 				} );
 

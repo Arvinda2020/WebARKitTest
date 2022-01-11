@@ -30,7 +30,7 @@
 			
 		</div>
 
-		<a id="link" rel="ar" href="" download="">
+		<a id="link" rel="ar" href="" download="model.usdz">
 			<img id="button" width="100" src="../three/examples/files/arkit.png">
 		</a>
 
@@ -59,7 +59,7 @@
 				document.body.appendChild( renderer.domElement );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 20 );
-				camera.position.set( - 2.5, 0.6, 3.0 );
+				camera.position.set( 0, 0.6, 3.0 );
 
 				const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
@@ -71,7 +71,7 @@
 				loader.load( 'spectarwatch.glb', async function ( gltf ) {
 
 					scene.add( gltf.scene );
-
+					
 					const shadowMesh = createSpotShadowMesh();
 					shadowMesh.position.y = - 1.1;
 					shadowMesh.position.z = - 0.25;

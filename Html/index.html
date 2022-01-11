@@ -26,10 +26,7 @@
 
 	<body>
 		<div id="info">
-			
-			
 		</div>
-
 		<a>
 			<img id="button" width="100" src="../three/examples/files/arkit.png">
 		</a>
@@ -67,16 +64,16 @@
 				scene.background = new THREE.Color( 0xf0f0f0 );
 				scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
-				const loader = new GLTFLoader().setPath( '../three/examples/models/gltf/DamagedHelmet/glTF/' );
-				loader.load( 'DamagedHelmet.gltf', async function ( gltf ) {
+				const loader = new GLTFLoader().setPath( '../Assets/Model/' );
+				loader.load( 'spectarwatch.glb', async function ( gltf ) {
 
 					scene.add( gltf.scene );
 
 					const shadowMesh = createSpotShadowMesh();
-					shadowMesh.position.y = - 1.1;
-					shadowMesh.position.z = - 0.25;
-					shadowMesh.scale.setScalar( 2 );
-					scene.add( shadowMesh );
+					shadowMesh.position.y = 0;
+					shadowMesh.position.z = 0;
+					shadowMesh.scale.setScalar( 10);
+					//scene.add( shadowMesh );
 
 					render();
 
@@ -93,7 +90,7 @@
 
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.addEventListener( 'change', render ); // use if there is no animation loop
-				controls.minDistance = 2;
+				controls.minDistance = 0.5;
 				controls.maxDistance = 10;
 				controls.target.set( 0, - 0.15, - 0.2 );
 				controls.update();
